@@ -13,6 +13,7 @@
       (unless (memq buf visible-buffers)
         (kill-buffer buf)))))
 
+(global-set-key (kbd "C-c b k") #'kill-hidden-buffers)
 (setq dired-dwim-target t
       inhibit-startup-screen t
       initial-scratch-message nil
@@ -99,8 +100,8 @@
 (setq package-archives
       '(("melpa" . "https://melpa.org/packages/")))
 (setq package-archives
-      ;; '(("gnu"    . "https://elpa.gnu.org/packages/")
-        ;; ("nongnu" . "https://elpa.nongnu.org/nongnu/")
+      '(("gnu"    . "https://elpa.gnu.org/packages/")
+        ("nongnu" . "https://elpa.nongnu.org/nongnu/")
         ("melpa"  . "https://melpa.org/packages/")))
 
 (require 'use-package)
@@ -233,13 +234,6 @@
 (use-package magit
   :bind
   ("C-x g" . magit-status))
-
-
-;; ------------------------------------------------------------
-;; Terminal
-;; ------------------------------------------------------------
-
-(use-package vterm)
 
 
 ;; ------------------------------------------------------------
